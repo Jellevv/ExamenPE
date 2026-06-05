@@ -1,14 +1,12 @@
 {
   "expo": {
-    "name": "ExamenPE",
-    "slug": "ExamenPE",
+    "name": "Wa make?",
+    "slug": "Wa make?",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
-    "newArchEnabled": true,
+    "icon": "./assets/appstore.png",
     "splash": {
-      "image": "./assets/splash-icon.png",
+      "image": "./assets/appstore.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -16,14 +14,26 @@
       "supportsTablet": true
     },
     "android": {
+      "permissions": [
+        "NOTIFICATIONS"
+      ],
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/playstore.png",
         "backgroundColor": "#ffffff"
       },
-      "edgeToEdgeEnabled": true
+      "package": "com.jellevv.ExamenPE"
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/appstore.png"
+    },
+    "plugins": [
+      "@react-native-community/datetimepicker",
+      "expo-secure-store"
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "d4dd8d91-cfd4-4fe6-bc69-7f728a4cd45e"
+      }
     }
   }
 }
