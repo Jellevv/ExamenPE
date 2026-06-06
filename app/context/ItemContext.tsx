@@ -191,15 +191,12 @@ export function ItemProvider({ children }: any) {
             const savedItems =
                 await AsyncStorage.getItem(storageKey!);
 
-            if (savedItems) {
-
-                setItems(JSON.parse(savedItems));
-
-            }
+            setItems(savedItems ? JSON.parse(savedItems) : []);
 
         } catch (error) {
 
             console.log('Load error:', error);
+            setItems([]);
 
         }
     };

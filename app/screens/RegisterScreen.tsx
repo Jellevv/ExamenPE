@@ -41,6 +41,23 @@ export default function RegisterScreen({ navigation }: any) {
         setLoading(true);
 
         try {
+            const existing = await SecureStore.getItemAsync('user_credentials');
+
+            if (existing) {
+                Alert.alert(
+                    'Account bestaat al',
+                    'Er is al een account op dit toestel. Log in met je bestaande account.',
+                    [
+                        {
+                            text: 'Inloggen',
+                            onPress: () => navigation.navigate('Login'),
+                        },
+                        { text: 'Annuleer', style: 'cancel' },
+                    ]
+                );
+                return;
+            }
+
             await SecureStore.setItemAsync(
                 'user_credentials',
                 JSON.stringify({ username: username.trim(), password })
@@ -121,7 +138,6 @@ export default function RegisterScreen({ navigation }: any) {
                     </Text>
                 </Pressable>
 
-                {/* Link to login */}
                 <Pressable
                     style={styles.linkButton}
                     onPress={() => navigation.navigate('Login')}
