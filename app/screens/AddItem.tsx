@@ -61,7 +61,6 @@ export default function AddItem() {
                 </Picker>
             </View>
 
-            {/* Date picker */}
             <Text style={styles.label}>Vervaldatum</Text>
 
             <Pressable

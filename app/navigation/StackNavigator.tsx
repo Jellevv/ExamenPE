@@ -51,11 +51,9 @@ export default function StackNavigator() {
             initialRouteName={initialRoute}
             screenOptions={{ headerShown: false }}
         >
-            {/* Auth screens */}
             <Stack.Screen name="Register" component={RegisterScreen} />
             <Stack.Screen name="Login" component={LoginScreen} />
 
-            {/* App screens */}
             <Stack.Screen name="Home" component={Home} />
             <Stack.Screen name="MainDrawer" component={DrawerNavigator} />
             <Stack.Screen
